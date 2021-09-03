@@ -1,16 +1,22 @@
-# VMT - Virtual Motion Tracker
-## [Official page and Manual / 公式ページ &  説明書](https://gpsnmeajp.github.io/VirtualMotionTrackerDocument/)
-## [Download / ダウンロード](https://gpsnmeajp.github.io/VirtualMotionTrackerDocument/download/)
+# VMT - Virtual Motion Tracker の MocapForAll向け改造版
 
-An easy-to-use virtual tracker driver for OpenVR. With your own device, your own software, and any.
-You can send pose (position and rotation) with OSC Protocol and use it as a virtual tracker on SteamVR.
+VMT - Virtual Motion Tracker を改造し、[デバイスの姿勢を取得するAPIを追加](https://github.com/KenjiAsaba/VirtualMotionTracker/commit/aa35bd98d5f569167222039a61ccab175c4761c3)したバージョンです。  
+負荷分散のためにネットワーク上の別PCで実行しているSteamVRからデバイスの姿勢を取得したいという[MocapForAll](https://github.com/Akiya-Research-Institute/MocapForAll-Wiki/wiki#%E7%9B%AE%E6%AC%A1)での利用を念頭にしたものですが、場合によっては他の用途にも使えるかもしれません。
 
-Creating your own OpenVR tracking device was difficult and required a high degree of technical work. 
-However, from now on, by using VMT, it will be possible to do it in a simple way like attaching to a GameObject in Unity.   
+## オリジナル版からの変更点
 
-自作デバイス、自作のソフトウェアで、簡単に使える OpenVR 仮想トラッカードライバです。OSCで姿勢(座標や回転)を受け取り、仮想的なトラッカーとしてSteamVR上で利用することができます。  
+ドライバに対する操作に、下記が追加されています。
 
-これまで、独自のOpenVRトラッキングデバイスを作成するということは難しい作業であり、高度な技術的作業が必要でした。しかし、これからはVMTを用いることで、UnityでGameObjectにアタッチするような簡単な方法で行うことができるようになります。  
+- **/VMT/GetDevicePose serial**
+  指定したシリアル番号のデバイスの姿勢の返送を要求します。
+  「serial」は、string型でデバイスシリアル(LHR-xxxxxxx等)を指定します。ヘッドマウントディスプレイに対しては、デバイスシリアルの代わりに「HMD」と指定することができます。
+
+ドライバからの応答に、下記が追加されています。
+
+- **/VMT/DevicePose serial x, y, z, qx, qy, qz, qw**
+  シリアル番号で特定されるデバイスの姿勢を通知します。
+
+上記以外は、[オリジナル版](https://gpsnmeajp.github.io/VirtualMotionTrackerDocument/)と同じです。
 
 # Licence
 MIT Licence
