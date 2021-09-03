@@ -7,13 +7,13 @@ VMT - Virtual Motion Tracker を改造し、[デバイスの姿勢を取得す�
 
 ドライバに対する操作に、下記が追加されています。
 
-- **/VMT/GetDevicePose serial**
+- **/VMT/GetDevicePose serial**  
   指定したシリアル番号のデバイスの姿勢の返送を要求します。
   「serial」は、string型でデバイスシリアル(LHR-xxxxxxx等)を指定します。ヘッドマウントディスプレイに対しては、デバイスシリアルの代わりに「HMD」と指定することができます。
 
 ドライバからの応答に、下記が追加されています。
 
-- **/VMT/DevicePose serial x, y, z, qx, qy, qz, qw**
+- **/VMT/Out/DevicePose serial x, y, z, qx, qy, qz, qw**  
   シリアル番号で特定されるデバイスの姿勢を通知します。
 
 上記以外は、[オリジナル版](https://gpsnmeajp.github.io/VirtualMotionTrackerDocument/)と同じです。
