@@ -157,15 +157,11 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>del "$(TargetDir)*.xml"
-move /y "$(TargetDir)*.dll" "$(TargetDir)dll"
-move /y "$(TargetDir)dll\Rug.Osc.dll" "$(TargetDir)"
-move /y "$(TargetDir)dll\openvr_api.dll" "$(TargetDir)"</PostBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
   <PropertyGroup>
-    <PreBuildEvent>del "$(TargetDir)*.pdb"
-del "$(TargetDir)*.dll"
-del "$(TargetDir)dll\*.dll"
-copy "$(TargetDir)..\..\openvr\bin\win64\openvr_api.dll" "$(TargetDir)dll"</PreBuildEvent>
+    <PreBuildEvent>
+    </PreBuildEvent>
   </PropertyGroup>
 </Project>

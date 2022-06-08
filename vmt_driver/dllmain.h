@@ -52,7 +52,7 @@ namespace VMTDriver {
     class VRWatchdogProvider;
 	class Log;
 
-    const string Version = "VMT_014";
+    const string Version = "VMT_013";
 
 	enum class ReferMode_t {
 		None = 0,   // ルーム座標を使用する

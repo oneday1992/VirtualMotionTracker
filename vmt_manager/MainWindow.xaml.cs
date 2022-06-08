@@ -42,7 +42,7 @@ namespace vmt_manager
     /// </summary>
     public partial class MainWindow : Window
     {
-        const string Version = "VMT_014";
+        const string Version = "VMT_013_Mfa01";
         private DispatcherTimer dispatcherTimer;
         Random rnd;
         string title = "";
@@ -647,7 +647,7 @@ namespace vmt_manager
 
         private void ShowAllButton(object sender, RoutedEventArgs e)
         {
-            for (int i = 0; i < 59; i++)
+            for (int i = 0; i < 1; i++)
             {
                 osc.Send(new OscMessage("/VMT/Room/Driver",
                     i, 1, 0f,
